@@ -23,8 +23,8 @@
 import UIKit
 import MCEmojiPicker
 
-class ViewController: UIViewController {
-    
+class PopoverExampleViewController: UIViewController {
+
     // MARK: - Private Properties
     
     private lazy var emojiButton: UIButton = {
@@ -62,7 +62,12 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Life Cycle
-    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Popover"
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         showHintAlertIfNeeded()
@@ -120,7 +125,7 @@ class ViewController: UIViewController {
 
 // MARK: - MCEmojiPickerDelegate
 
-extension ViewController: MCEmojiPickerDelegate {
+extension PopoverExampleViewController: MCEmojiPickerDelegate {
     func didGetEmoji(emoji: String) {
         emojiButton.setTitle(emoji, for: .normal)
     }

@@ -214,6 +214,10 @@ extension MCEmojiCollectionViewCell: UIGestureRecognizerDelegate {
         _ gestureRecognizer: UIGestureRecognizer,
         shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer
     ) -> Bool {
+        if otherGestureRecognizer is UIPanGestureRecognizer {
+            // cancel out scrolling and sheet dismissal
+            return false
+        }
         return true
     }
 }

@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		462B22AC2CDD186A00E4BA20 /* SheetExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B22AB2CDD186400E4BA20 /* SheetExampleViewController.swift */; };
 		C44B58B529867F5E006478D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44B58B429867F5E006478D5 /* AppDelegate.swift */; };
-		C44B58B929867F5E006478D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44B58B829867F5E006478D5 /* ViewController.swift */; };
+		C44B58B929867F5E006478D5 /* PopoverExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44B58B829867F5E006478D5 /* PopoverExampleViewController.swift */; };
 		C44B58BE29867F5F006478D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C44B58BD29867F5F006478D5 /* Assets.xcassets */; };
 		C44B58C729867F66006478D5 /* MCEmojiPicker in Frameworks */ = {isa = PBXBuildFile; productRef = C44B58C629867F66006478D5 /* MCEmojiPicker */; };
 		C49629B329873E2F0070BE66 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C49629B529873E2F0070BE66 /* Localizable.strings */; };
@@ -16,10 +17,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		462B22AB2CDD186400E4BA20 /* SheetExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetExampleViewController.swift; sourceTree = "<group>"; };
 		C44B58AA29867E13006478D5 /* MCEmojiPicker */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MCEmojiPicker; path = ..; sourceTree = "<group>"; };
 		C44B58B229867F5E006478D5 /* iOS Example App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44B58B429867F5E006478D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C44B58B829867F5E006478D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C44B58B829867F5E006478D5 /* PopoverExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverExampleViewController.swift; sourceTree = "<group>"; };
 		C44B58BD29867F5F006478D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C44B58C229867F5F006478D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C49629B429873E2F0070BE66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -150,7 +152,8 @@
 		C4E4AF212986835D004BB947 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C44B58B829867F5E006478D5 /* ViewController.swift */,
+				C44B58B829867F5E006478D5 /* PopoverExampleViewController.swift */,
+				462B22AB2CDD186400E4BA20 /* SheetExampleViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -268,8 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C44B58B929867F5E006478D5 /* ViewController.swift in Sources */,
+				C44B58B929867F5E006478D5 /* PopoverExampleViewController.swift in Sources */,
 				C44B58B529867F5E006478D5 /* AppDelegate.swift in Sources */,
+				462B22AC2CDD186A00E4BA20 /* SheetExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
