@@ -106,6 +106,9 @@ final class MCEmojiPickerView: UIView {
         return bounds.width * 0.13
     }()
     
+    /// Flag to ensure initial setup is only performed once.
+    private var hasPerformedInitialSetup = false
+    
     private weak var delegate: MCEmojiPickerViewDelegate?
     
     // MARK: - Initializers
@@ -124,8 +127,13 @@ final class MCEmojiPickerView: UIView {
     
     // MARK: - Life Cycle
     
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        // Perform initial setup only once
+        guard !hasPerformedInitialSetup else { return }
+        hasPerformedInitialSetup = true
+        
         setupCategoryViews()
         setupCollectionViewLayout()
         setupCollectionViewBottomInsets()
