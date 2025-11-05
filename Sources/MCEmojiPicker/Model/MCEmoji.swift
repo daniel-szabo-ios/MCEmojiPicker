@@ -23,8 +23,8 @@
 import Foundation
 
 /// The main model for interacting with emojis.
-struct MCEmoji {
-    
+@_spi(JSON)
+public struct MCEmoji: Codable {
     // MARK: - Types
     
     /// Keys for storage in UserDefaults.
@@ -65,9 +65,11 @@ struct MCEmoji {
     public var lastUsage: TimeInterval {
         usage.first ?? .zero
     }
-    
     /// The string representation of the emoji.
-    private(set) public var string: String = ""
+    public var string: String {
+        getEmoji()
+    }
+
     /// The keys used to represent the emoji.
     private(set) public var emojiKeys: [Int]
     /// A boolean indicating whether this emoji has different skin tones available.
@@ -96,8 +98,6 @@ struct MCEmoji {
         self.isSkinToneSupport = isSkinToneSupport
         self.searchKey = searchKey
         self.version = version
-        
-        string = getEmoji()
     }
     
     // MARK: - Public Methods
@@ -106,9 +106,8 @@ struct MCEmoji {
     
     /// - Parameters:
     ///   - skinToneRawValue: The raw value of the `MCEmojiSkinTone`.
-    public mutating func set(skinToneRawValue: Int) {
+    public func set(skinToneRawValue: Int) {
         UserDefaults.standard.set(skinToneRawValue, forKey: StorageKeys.skinTone(self).key)
-        string = getEmoji()
     }
     
     /// Increments the usage count for this emoji.
@@ -133,7 +132,8 @@ struct MCEmoji {
 }
 
 /// This enumeration allows you to determine which skin tones can be set for `MCEmoji`.
-enum MCEmojiSkinTone: Int, CaseIterable {
+@_spi(JSON)
+public enum MCEmojiSkinTone: Int, CaseIterable {
     case none = 1
     case light = 2
     case mediumLight = 3
@@ -142,7 +142,7 @@ enum MCEmojiSkinTone: Int, CaseIterable {
     case dark = 6
     
     /// Hex value for the skin tone.
-    var skinKey: Int? {
+    public var skinKey: Int? {
         switch self {
         case .none:
             return nil
